@@ -10,7 +10,7 @@ Bill of materials
 -   [120 Gateron
     Clears](https://deskthority.net/wiki/Gateron_KS-3_series) from
     MassDrop  
--   Qisan board, disassembled  
+-   Qisan board, disassembled (Plate, and Case)
 -   82 1n4148 diodes that I had left over from previous projects  
 -   a [Teensy 2.0](http://www.pjrc.com/teensy/index.html)  
 -   Solder, associated tools, wiring
