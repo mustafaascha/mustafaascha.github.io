@@ -97,7 +97,7 @@ Fortunately, the process of programming a keyboard can be done with
 I used the Keycool 84 present [from
 keyboard-layout-editor.com](http://www.keyboard-layout-editor.com/),
 modifying it for my needs. I ended up with [this
-layout](mustafa.fyi/assets/qisan_keyboard_layout.json).
+layout](http://www.mustafa.fyi/assets/qisan_keyboard_layout.json).
 
 I then dropped the json file into [Ruiqi Mao's](reddit.com/u/iandr0idos)
 [TMK Firmware Builder](http://kb.sized.io/), which showed me how to wire
