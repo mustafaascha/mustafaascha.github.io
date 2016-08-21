@@ -4,7 +4,6 @@ title: Modding a Qisan 82-key Keyboard
 date: 2016-08-21
 ---
 
-
 Bill of materials
 -----------------
 
@@ -129,8 +128,6 @@ access the
 Teensy.](http://www.mustafa.fyi/assets/qisan_teensy_access.JPG) This
 isn't pretty, but it also works.
 
-[Here's what it looks like with just the
-switches](http://www.mustafa.fyi/assets/qisan_switches.JPG).
 Unfortunately, I don't have proper keycaps, so [the board is a bit of a
 frankenstein.](http://www.mustafa.fyi/assets/qisan_frankenstein.JPG).
 This is okay, for now.
