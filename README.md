@@ -1,3 +1,3 @@
 # mustafaascha.github.io
 
-Still getting this work up and running. In the meantime, feel free to read the placeholder text.    
+My first website, it describes my work and interests.
