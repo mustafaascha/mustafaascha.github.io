@@ -6,7 +6,7 @@ date: 2016-08-28
 
 ### Why Bookdown 
 
-There are several tools for making cool documents using markdown, but one of the best tools for producing statistical/data reports is [R Markdown](https:///rmarkdown.rstudio.com). R Markdown is great, but it seems geared towards producing single-file documents. On this page, I'll be briefly reviewing [Yihui Xie's documentation of bookdown](https://bookdown.org/yihui/bookdown/). 
+There are several tools for making cool documents using markdown, and one of the best tools for producing statistical/data reports is [R Markdown](https:///rmarkdown.rstudio.com). R Markdown is great, but it seems geared towards producing single-file documents. On this page, I'll be briefly reviewing how to make more complex reports using [Yihui Xie's bookdown](https://bookdown.org/yihui/bookdown/). 
 
 If you've never used markdown, you should know that it's used in a lot of different contexts, and has achieved this populatrity by being both simple and readable. [It's used for comments on Reddit, for example](https://www.reddit.com/r/reddit.com/comments/6ewgt/reddit_markdown_primer_or_how_do_you_do_all_that/c03nik6). [This blog is made using markdown, too, powered by Jekyll](https://github.com/mustafaascha/mustafaascha.github.io). If you're interested, [there's an R Markdown cheatsheet here](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf). 
 
