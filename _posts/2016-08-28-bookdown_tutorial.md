@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: Bookdown Tutorial  
+title: Getting started with bookdown  
 date: 2016-08-28  
 ---
 
