@@ -911,9 +911,8 @@ Here's a peek at what `inspect` says when we give it the simulated data:
     ##  10 <{Mouth,}>   1.0000000 
     ## 
 
-Well, that's not very interesting. It's saying that `1/30` people had
-each of those sequences. That's one person...out of the entire cohort of
-30.
+Well, that's not very interesting. It's saying that everyone had mouth, 
+lung, and foot disease. It is sad, I suppose. 
 
 Closing thoughts
 ----------------
