@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Claims Sequences; Fitting the data to the model, and the model to the data
+title: Healthcare claims - Sequence associations
 date: 2016-09-05
 ---
 
