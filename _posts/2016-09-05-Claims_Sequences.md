@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Claims Sequences: Fitting the data to the model, and the model to the data
+title: Claims Sequences; Fitting the data to the model, and the model to the data
 date: 2016-09-05
 ---
 
