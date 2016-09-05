@@ -1,9 +1,3 @@
----
-layout: post
-title: Healthcare Claims, Sequences Analysis
-date: 2016-09-05
----
-
 Purpose
 -------
 

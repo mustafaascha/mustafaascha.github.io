@@ -67,7 +67,8 @@ to the format:
 data.frame(items = c("Heart", "Lung", "Liver", "Brain"), 
            sequenceID = c(1, 1, 2, 2),
            eventID = c(1, 2, 1, 2), 
-           size = rep(1, 4))
+           size = rep(1, 4)) %>% 
+pander()
 
 ```
 
