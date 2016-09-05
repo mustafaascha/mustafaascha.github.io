@@ -1,3 +1,11 @@
+
+---
+layout: post
+title: "Claims Sequences: Making the data fit, and fitting to the data"
+date: 2016-09-05
+---
+
+
 Purpose
 -------
 
