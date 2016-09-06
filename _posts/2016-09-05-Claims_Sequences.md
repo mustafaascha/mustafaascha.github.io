@@ -918,7 +918,7 @@ find anything very interesting. Still, let's run the algorithm:
     ## 
     ## total elapsed time: 0.301s
 
-### Interpreting results
+### Starting to interpret results
 
 [I'll point one of the `arules` package author's
 tutorials](http://michael.hahsler.net/research/arules_RUG_2015/demo/)
