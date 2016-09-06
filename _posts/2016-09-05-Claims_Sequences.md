@@ -309,9 +309,9 @@ diagnoses](https://www.cms.gov/Medicare/Coding/ICD9ProviderDiagnosticCodes/codes
 or [HCPCS codes to
 procedures](https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets/index.html)
 at the Centers for Medicare and Medicaid Services website if you're
-interested. I've found that CPT codes are harder to obtain, though [feel
+interested. I've found that CPT codes are harder to obtain, though feel
 free to email me and let me know if they're easily
-available](mustafa.ascha@gmail.com).
+available: <mustafa.ascha@gmail.com>.
 
 Cleaning the data so it fits
 ----------------------------
