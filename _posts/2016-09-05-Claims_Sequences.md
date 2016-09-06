@@ -145,8 +145,9 @@ to the format:
 Note that, because there is more than one diagnosis per patient-visit,
 we will have a size greater than one.
 
-If you want to see the example provided by `arulesSequences`, you can do
-the following:
+If you want to see the example "zaki" data provided by `arulesSequences`, you can
+load the library and run `data(zaki)`. If you convert it to a data.frame
+(`as(zaki, "data.frame")`), you should see something like this:
 
 <table style="width:54%;">
 <colgroup>
@@ -317,9 +318,9 @@ Cleaning the data so it fits
 
 There are a couple of issues with the initial format:
 
--   We've got dates, but we need sequences
--   We need the diagnosis names instead of their codes
--   We need all of the items for each transaction listed in one row,
+-   - We've got dates, but we need sequences
+-   - We need the diagnosis names instead of their codes
+-   - We need all of the items for each transaction listed in one row,
     instead of one row for each transaction-diagnosis
 
 ### Fixing the date
@@ -931,7 +932,7 @@ object:
 
     ## set of 4816 sequences
 
-Alright, that's helpful information. We have 72 sequences.
+Alright, that's helpful information. We have 4816 sequences.
 
 The `inspect` function is really the workhorse that we'll use, here.
 `inspect` allows you to subset, which is really useful if you know what
@@ -954,9 +955,8 @@ Here's a peek at what `inspect` says when we give it the simulated data:
     ##  10 <{Mouth,}>   1.0000000 
     ## 
 
-Well, that's not very interesting. It's saying that `1/30` people had
-each of those sequences. That's one person...out of the entire cohort of
-30.
+Well, that's not very interesting. I'll be doing more to explore these
+results in the next post. Keep an eye out!
 
 Closing thoughts
 ----------------
