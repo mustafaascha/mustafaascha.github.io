@@ -14,8 +14,9 @@ resources](http://statistical-research.com/association-rule-learning-and-the-apr
 for [performing market-basket (association)
 analysis](http://www.salemmarafi.com/code/market-basket-analysis-with-r/).
 
-There are fewer resources on mining sequences data. This
-document will review how to (1) convert a set of billing claims to an appropriate format
+There are fewer resources on mining sequences data. 
+
+This document will review how to (1) convert a set of billing claims to an appropriate format
 for the R package arulesSequences, and (2) run the CSPADE sequences analysis algorithm. 
 As you might expect, cleaning the data is the hard part. For anyone who was in 
 my position and had billing claims of similar form, this might help save some time.
