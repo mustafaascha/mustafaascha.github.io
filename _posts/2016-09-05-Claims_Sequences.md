@@ -14,11 +14,16 @@ resources](http://statistical-research.com/association-rule-learning-and-the-apr
 for [performing market-basket (association)
 analysis](http://www.salemmarafi.com/code/market-basket-analysis-with-r/).
 
-There are, however, fewer resources on mining sequences data. This
-document will review how to run the CSPADE sequences analysis algorithm
-starting from a set of billing claims. As you might expect, cleaning the
-data is the hard part. For anyone who was in my position and had billing
-claims, this might help save some time.
+There are fewer resources on mining sequences data. This
+document will review how to (1) convert a set of billing claims to an appropriate format
+for the R package arulesSequences, and (2) run the CSPADE sequences analysis algorithm. 
+As you might expect, cleaning the data is the hard part. For anyone who was in 
+my position and had billing claims of similar form, this might help save some time.
+
+Future posts will simulate data with particular sequences added, which will then by 
+analyzed using CSPADE and results interpreted. Also, for those of you working with
+"big" data, there is an adapted sequences-reading function that takes advantage of 
+the tidyverse and parallel CPU processes. 
 
 Software
 --------
