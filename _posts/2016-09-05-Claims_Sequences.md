@@ -30,7 +30,7 @@ for this post, but I would like to point out one alternative,
 [TraMineR](http://traminer.unige.ch/).
 
 The TraMineR website has a lot of resources, though there seem to be
-fewer for aruelsSequences. The best source for learning arulesSequences,
+fewer for arulesSequences. The best source for learning arulesSequences,
 at the moment, appears to be [this Data Mining Algorithms in R
 Wikibook](https://en.wikibooks.org/wiki/Data_Mining_Algorithms_In_R/Sequence_Mining/SPADE).
 The previously-linked tutorial uses data provided by the arulesSequences
