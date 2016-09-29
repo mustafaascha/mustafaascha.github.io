@@ -1,35 +1,290 @@
 ---
-title: "Exploring Claims Sequences Results"
+title: "Working with Transactions"
 author: "Mustafa Ascha"
 date: "September 11, 2016"
 output: html_document
+toc: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Visualizing the sequences
+In the last post, we went through the process of simulating some random billing claims data, then putting it through the CSPADE algorithm to see if there were any interesting frequent sequences. 
+
+
+Before we begin any coding, I'd like to point out that our model will involve considering patients as transactions, and diseases as items. When a patient has a set of diseases, and two of those diseases also occur in many other patients, we'll have an association rule with high "support". For more on understanding association rules, [check out the `arules` package author's document.](http://michael.hahsler.net/research/arules_RUG_2015/demo/) It's a great website, and I highly recommend reading through it. 
+
+## Load libraries, get data
 
 First, of course, we'll have to load some libraries: 
 
 ```{r libraries}
 
-library(arulesSequences)
+library(arules)
 library(arulesViz)
 library(dplyr)
 library(ggplot2)
+library(tidyr)
+library(stringr)
+library(statnet)
+library(ggnetwork)
 
 ```
 
-Alright, so let's see what data is available to visualize. I'll just be exploring, here, so let's start with checking out what methods are available for the `sequences` class: 
+Here's how to make the data we'll use. 
+
+Because this is a simulation, there will be some randomness involved. To make sure you can replicate everything, we'll set a seed: 
+
+```{r set_seed}
+
+set.seed(9001)
+
+```
+
+Making the list of diseases became meditative for me, so I may have added a bit many. Either way, we'll use that to make a dataframe with five patients. 
+
+```{r sim_data}
+
+diseases <- 
+	c("Heart_disease",
+	  "Hypertension",
+	  "Kidney_disease",
+	  "Liver_cirrhosis",
+	  "Gall_stones",
+	  "Kidney_stones",
+	  "Tonsiliths",
+	  "Unspecified_cancer",
+	  "Vitamin_D_deficiency",
+	  "Trichtillomania",
+	  # "Psoriasis",
+	  # "Esophagitis",
+	  # "Otitis_media",
+	  # "Ingrown_toenail",
+	  # "ADHD",
+	  # "Arthritis",
+	  # "Chlamydia",
+	  # "Parasites_Scabies",
+	  # "Meningitis",
+	  # "Zika_Virus",
+	  # "Hepatitis",
+	  # "Giardiasis",
+	  # "Takatsubo_Cardiomyopathy",
+	  # "Flu",
+	  # "Obesity",
+	  # "Latex_allergies",
+	  # "Lice",
+	  # "Legionellosis",
+	  # "Lymphocytic_Choriomeningitis",
+	  # "Tetanus",
+	  # "Ticks_Lyme_Disease",
+	  # "Tuburculosis",
+	  # "Trench_fever",
+	  # "Creutzfeldt-Jakob_Disease",
+	  "Hearing_loss")
+
+claims_data <- 
+	data.frame(disease = sample(diseases, 30, replace = TRUE), 
+		   patient = rep_len(1:10, 30), stringsAsFactors = FALSE)
+
+```
+
+
+
+## Format data for arules
+
+Given some data, let's prepare it for associations analysis. We'll use the `split` command to produce a list of the diseases that contains a vector of patient identifiers for patients with those diseases.  
+
+
+
+Here we go: 
+
+```{r splitit}
+
+claims_tx <- split(claims_data$patient, claims_data$disease)
+
+```
+
+I'll be artificially adding "Hypertension" and "Kidney disease" to several of the patients, just to make sure arules works. ;)
+
+
+```{r add_association}
+
+claims_tx$Hypertension <- c(claims_tx$Hypertension, 1:3)
+
+claims_tx$Kidney_disease <- c(claims_tx$Kidney_disease, 1:3)
+
+```
+
+Hopefully that will work..
+
+Note that `arules` won't accept "tidLists" with a transaction listed more than once. In our case, that means that patients who have several of the same diagnosis will be considered only in terms of their yes-no disease status. If you're interested in recommender systems that can handle ratings or counts data, I recommend looking into [collaborative filtering approaches](https://en.wikipedia.org/wiki/Netflix_Prize).
+
+```{r make_tidlists}
+
+claims_tx <- lapply(claims_tx, function(x) sort(unique(x)))
+
+claims_tx <- as(claims_tx, "tidLists")
+
+```
+
+## Checking out our data
+
+Even before running the *apriori* or *eclat* algorithms, there's a lot to learn about the data.
+
+Here's what R shows when you ask for the object: 
+
+```{r claims_out}
+
+claims_tx
+
+```
+
+That's useful--we know how many items (diagnoses) and how many transactions (patients) we have. 
+
+We can also `inspect` the claims:
+
+```{r claims_inspect, results = "hide"}
+
+claims_inspect <- inspect(claims_tx)
+
+```
+
+```{r display_claims_inspect, echo = FALSE}
+
+pander::pander(claims_inspect)
+
+```
+
+
+The previous table tells us which patients have which diseases. There are a few ways to interpret this, as far as extracting interesting information.
+
+For a more extensive list of things to do with `tidLists`, we can use the `methods` function: 
+
+```{r tid_methods}
+
+methods(class = "tidLists")
+
+```
+
+The last exploration we'll do before association analyses is a visualization: 
+
+```{r image_claims}
+
+image(claims_tx)
+
+```
+
+
+
+## Calculate and examine interesting measures
+
+
+At this point, let's see what the *aprior* algorithm has to say. First, we'll have R calculate the relationships according to our own parameters: support, confidence and the maximum length of an association.
+
+Support is the proportion of transactions that contain an item, confidence of the association {x, y} is the support of the union of x and y divided by the support of x. 
+
+```{r apriori, warning = FALSE}
+
+claims_rules <- 
+  apriori(claims_tx, parameter = list(support = 0.01, confidence = 0.1, maxlen = 2))
+
+```
+
+This is healthcare data, so we'll look at tests of difference and odds ratios. There are other measures of rules, so definitely check out the documentation.
+
+Here's how to calculate the interest measures and cbind them to a data frame showing associations and other measures: 
+
+```{r interests}
+
+claims_rules_measures <- interestMeasure(x = claims_rules, 
+                                         measure = c("chiSquared", "FishersExactTest", "oddsRatio"), 
+                                         transactions = claims_tx)
+
+claims_rules_measures <- cbind(as(claims_rules, "data.frame"), claims_rules_measures)
+                           
+
+```
+
+
+There's some munging required...
+
+
+```{r munge_interests}
+
+claims_rules_measures$rules <- as.character(claims_rules_measures$rules)
+
+claims_rules_measures <- 
+  claims_rules_measures %>% 
+    separate(col = "rules", 
+           into = c("First_disease", "Second_disease"), 
+           sep = "\\=\\>", 
+           extra = "drop")
+
+claims_rules_measures$First_disease <- 
+  str_replace_all(string = claims_rules_measures$First_disease, pattern = "\\{|\\}", replacement = "")
+
+claims_rules_measures$Second_disease <- 
+  str_replace_all(string = claims_rules_measures$Second_disease, pattern = "\\{|\\}", replacement = "")
+
+claims_network <- 
+  network(x = cbind(claims_rules_measures$First_disease, claims_rules_measures$Second_disease))
+
+```
+
+Let's see what this network looks like: 
+
+```{r claims_viz}
+
+plot(claims_network)
+
+```
+
+Or, we can try doing something like this with ggplot2:
+
+```{r gg_claims}
+
+library(ggnetwork)
+
+library(igraph)
+
+claims_igraph <- graph.data.frame(d = claims_rules_measures %>% select(First_disease, Second_disease, oddsRatio))
+
+plot(claims_igraph, edge.arrow.size = 0.04)
+
+class(claims_igraph)
+
+methods(class = "igraph")
+
+
+
+```
+
+
+
+## Networking with rules
+
+Alright, so let's see what data is available to visualize. I'll just be exploring, here, so let's start with checking out what methods are available for the `rules` class: 
 
 ```{r check_methods}
 
-methods(class = "sequences")
+library(viridis)
+
+methods(class = "rules")
+
+claims_ggnetwork <- ggnetwork(claims_igraph)
+
+claims_ggnetwork <- 
+  
+
+ggplot(claims_ggnetwork, aes()) + 
+  geom_segment(aes(x = x, y = y, xend = xend, yend = yend, col = )) + 
+  geom_point(aes(x, y, col = vertex.names), size = 10) + 
+  scale_color_viridis(discrete = TRUE)
+  
+  
 
 ```
-
 
 
 
