@@ -149,7 +149,7 @@ We can also `inspect` the claims:
 <thead>
 <tr class="header">
 <th align="center">items</th>
-<th align="center">transationIDs</th>
+<th align="center">transactionIDs</th>
 </tr>
 </thead>
 <tbody>
