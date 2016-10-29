@@ -1,5 +1,8 @@
-Getting Started with Transactions and Diagnosis Data
-====================================================
+---
+layout: post
+title: Getting Started with Transactions and Diagnosis Data
+date: 2016-09-29
+---
 
 -   [Load libraries, get data](#load-libraries-get-data)
 -   [Format data for arules](#format-data-for-arules)
