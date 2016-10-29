@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Diagnosis data associations
+title: Graphing association
 date: 2016-09-29
 ---
 
@@ -14,7 +14,7 @@ date: 2016-09-29
 In the last post, we went through the process of simulating some random
 billing claims data, then putting it through the CSPADE algorithm to see
 if there were any interesting frequent sequences. Here, we'll review how 
-to examine at the associations without sequences.
+to graph association rules without sequences.
 
 Before we begin any coding, I'd like to point out that our model will
 involve considering patients as transactions, and diseases as items.
@@ -35,16 +35,13 @@ First, of course, we'll have to load some libraries.
     library(tidyr)
     library(stringr)
 
-Here's how to make the data we'll use.
-
 Because this is a simulation, there will be some randomness involved. To
 make sure you can replicate everything, we'll set a seed:
 
     set.seed(9001)
 
-Making the list of diseases became meditative for me, so I may have
-added a bit many. Either way, we'll use that to make a dataframe with
-five patients.
+To begin making data, here's a list of diseases. We'll use that to make 
+a dataframe with five patients.
 
     diseases <- 
         c("Heart_disease",
@@ -57,30 +54,6 @@ five patients.
           "Unspecified_cancer",
           "Vitamin_D_deficiency",
           "Trichtillomania",
-          # "Psoriasis",
-          # "Esophagitis",
-          # "Otitis_media",
-          # "Ingrown_toenail",
-          # "ADHD",
-          # "Arthritis",
-          # "Chlamydia",
-          # "Parasites_Scabies",
-          # "Meningitis",
-          # "Zika_Virus",
-          # "Hepatitis",
-          # "Giardiasis",
-          # "Takatsubo_Cardiomyopathy",
-          # "Flu",
-          # "Obesity",
-          # "Latex_allergies",
-          # "Lice",
-          # "Legionellosis",
-          # "Lymphocytic_Choriomeningitis",
-          # "Tetanus",
-          # "Ticks_Lyme_Disease",
-          # "Tuburculosis",
-          # "Trench_fever",
-          # "Creutzfeldt-Jakob_Disease",
           "Hearing_loss")
 
     claims_data <- 
@@ -258,7 +231,34 @@ association.
 
 There are a few packages for rules visualization, it's worth going
 through `rules` class methods before getting our hands dirty with the
-raw data.
+raw data: 
+
+
+    methods(class = "rules")
+
+    ##  [1] abbreviate             aggregate              coerce                
+    ##  [4] coverage               c                      dissimilarity         
+    ##  [7] duplicated             generatingItemsets     head                  
+    ## [10] %in%                   info<-                 info                  
+    ## [13] initialize             inspectDT              inspect               
+    ## [16] interestMeasure        intersect              is.element            
+    ## [19] is.maximal             is.redundant           is.significant        
+    ## [22] is.subset              is.superset            itemInfo              
+    ## [25] itemLabels             items                  labels                
+    ## [28] length                 lhs<-                  lhs                   
+    ## [31] match                  plot                   quality<-             
+    ## [34] quality                rhs<-                  rhs                   
+    ## [37] [                      sample                 setdiff               
+    ## [40] setequal               show                   size                  
+    ## [43] sort                   subset                 summary               
+    ## [46] support                supportingTransactions tail                  
+    ## [49] t                      union                  unique                
+    ## [52] write                 
+    ## see '?methods' for accessing help and source code
+    
+There's a lot available to explore!
+
+To get you going, here's one of the default plotting methods: 
 
     plot(claims_rules, method = "graph", control = list(type = "items"))
 
@@ -267,8 +267,8 @@ raw data.
 Interpreting this information
 -----------------------------
 
-This is healthcare data, so we'll look at tests of difference and odds
-ratios. There are other measures of rules, so definitely check out the
+This is healthcare data, so it makes the sense to look at tests of 
+difference and odds ratios. There are other measures of rules, definitely check out the
 documentation.
 
 Here's how to calculate the interest measures and cbind them to a data
@@ -345,27 +345,6 @@ We can even use `ggplot2`:
 
     library(viridis)
 
-    methods(class = "rules")
-
-    ##  [1] abbreviate             aggregate              coerce                
-    ##  [4] coverage               c                      dissimilarity         
-    ##  [7] duplicated             generatingItemsets     head                  
-    ## [10] %in%                   info<-                 info                  
-    ## [13] initialize             inspectDT              inspect               
-    ## [16] interestMeasure        intersect              is.element            
-    ## [19] is.maximal             is.redundant           is.significant        
-    ## [22] is.subset              is.superset            itemInfo              
-    ## [25] itemLabels             items                  labels                
-    ## [28] length                 lhs<-                  lhs                   
-    ## [31] match                  plot                   quality<-             
-    ## [34] quality                rhs<-                  rhs                   
-    ## [37] [                      sample                 setdiff               
-    ## [40] setequal               show                   size                  
-    ## [43] sort                   subset                 summary               
-    ## [46] support                supportingTransactions tail                  
-    ## [49] t                      union                  unique                
-    ## [52] write                 
-    ## see '?methods' for accessing help and source code
 
     claims_ggnetwork <- ggnetwork(claims_network)
 
