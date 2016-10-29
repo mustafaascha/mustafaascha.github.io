@@ -229,12 +229,9 @@ visualization:
 
 At this point, let's see what the *apriori* algorithm has to say. First,
 we'll have R calculate the relationships according to our own
-parameters: support, confidence and the maximum length of an
+parameters: minimum support, minimum confidence and the maximum length of an
 association.
 
-Support is the proportion of transactions that contain an item,
-confidence of the association {x, y} is the support of the union of x
-and y divided by the support of x.
 
     claims_rules <- 
       apriori(claims_tx, parameter = list(support = 0.01, confidence = 0.1, maxlen = 2))
