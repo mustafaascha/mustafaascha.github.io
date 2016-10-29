@@ -34,8 +34,6 @@ library(ggnetwork)
 
 Here's how to make the data we'll use. 
 
-Because this is a simulation, there will be some randomness involved. To make sure you can replicate everything, we'll set a seed: 
-
 ```{r set_seed}
 
 set.seed(9001)
@@ -209,7 +207,7 @@ claims_rules_measures <- cbind(as(claims_rules, "data.frame"), claims_rules_meas
 
 There's some munging required...
 
-
+
 ```{r munge_interests}
 
 claims_rules_measures$rules <- as.character(claims_rules_measures$rules)

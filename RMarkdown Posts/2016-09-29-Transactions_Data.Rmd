@@ -1,13 +1,14 @@
 ---
-title: "Working with Transactions"
+title: "Getting Started with Transactions and Diagnosis Data"
 author: "Mustafa Ascha"
-date: "September 11, 2016"
-output: html_document
-toc: true
+date: "September 29, 2016"
+output: 
+  md_document:
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, error = FALSE)
 ```
 
 In the last post, we went through the process of simulating some random billing claims data, then putting it through the CSPADE algorithm to see if there were any interesting frequent sequences. 
@@ -17,9 +18,9 @@ Before we begin any coding, I'd like to point out that our model will involve co
 
 ## Load libraries, get data
 
-First, of course, we'll have to load some libraries: 
+First, of course, we'll have to load some libraries.
 
-```{r libraries}
+```{r libraries, message = FALSE}
 
 library(arules)
 library(arulesViz)
@@ -27,8 +28,6 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 library(stringr)
-library(statnet)
-library(ggnetwork)
 
 ```
 
@@ -84,8 +83,8 @@ diseases <-
 	  "Hearing_loss")
 
 claims_data <- 
-	data.frame(disease = sample(diseases, 10, replace = TRUE), 
-		   patient = rep_len(1:5, 10), stringsAsFactors = FALSE)
+	data.frame(disease = sample(diseases, 20, replace = TRUE), 
+		   patient = rep_len(1:5, 20), stringsAsFactors = FALSE)
 
 ```
 
@@ -190,17 +189,6 @@ claims_rules <-
   apriori(claims_tx, parameter = list(support = 0.01, confidence = 0.1, maxlen = 2))
 
 
-#remove redundant rules as seen on stackoverflow: 
-  #http://stackoverflow.com/questions/23971823/removing-invertedreverse-duplicate-rules-from-apriori-result-in-r
-# 
-# subset.matrix <- is.subset(claims_rules, claims_rules)
-# 
-# subset.matrix[lower.tri(subset.matrix,diag=T)] <- NA
-# 
-# redundant <- colSums(subset.matrix,na.rm=T) >= 1
-# 
-# claims_rules_notR <- claims_rules[redundant]
-
 ```
 
 There are a few packages for rules visualization, it's worth going through `rules` class methods before getting our hands dirty with the raw data. 
@@ -214,7 +202,7 @@ plot(claims_rules, method = "graph", control = list(type = "items"))
 
 
 
-## Calculate and examine interesting measures
+## Interpreting this information
 
 
 This is healthcare data, so we'll look at tests of difference and odds ratios. There are other measures of rules, so definitely check out the documentation.
@@ -237,7 +225,10 @@ claims_rules_measures <-
 There's some munging required...
 
 
-```{r munge_interests}
+```{r munge_interests, message = FALSE}
+
+
+library(statnet)
 
 claims_rules_measures$rules <- as.character(claims_rules_measures$rules)
 
@@ -275,15 +266,13 @@ plot(claims_network)
 
 Or, we can try doing something like this with igraph:
 
-```{r gg_claims}
+```{r gg_claims, message = FALSE}
 
 
 library(igraph)
 
 claims_igraph <- graph.data.frame(d = claims_rules_measures %>% select(First_disease, Second_disease, oddsRatio))
 
-# graph_from_edgelist(el = cbind(claims_rules_measures$First_disease, claims_rules_measures$Second_disease), directed = FALSE) %>% plot
-  
 plot(claims_igraph, edge.arrow.size = 0.04)
 
 class(claims_igraph)
@@ -308,8 +297,6 @@ claims_ggnetwork <- ggnetwork(claims_network)
 
 claims_ggnetwork$vertex.names <- as.character(claims_ggnetwork$vertex.names)
 
-# claims_ggnetwork <- 
-#   claims_ggnetwork[!is.na(claims_ggnetwork$na.y),]
 
 ggplot(claims_ggnetwork, aes()) + 
   geom_segment(aes(x = x, y = y, xend = xend, yend = yend)) + 
@@ -320,11 +307,11 @@ ggplot(claims_ggnetwork, aes()) +
 ```
 
 
+## To come....
 
-## Networking with rules
-
-Alright, so let's see what data is available to visualize. I'll just be exploring, here, so let's start with checking out what methods are available for the `rules` class: 
-
+* Network analysis with `rules` objects
+* Getting started with SEER data in R
+* Analyzing time to second cancer using SEER
 
 
 
