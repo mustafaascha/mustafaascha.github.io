@@ -305,6 +305,8 @@ There's some munging required...
 
     claims_rules_measures <- 
       claims_rules_measures[rep_len(c(TRUE, FALSE), nrow(claims_rules_measures)),]
+      
+We can then use this data to make a network of disease-disease associations (which can be assigned attributes according to the rules measures, but that's for another time): 
 
     claims_network <- 
       network(x = cbind(claims_rules_measures$First_disease, claims_rules_measures$Second_disease), directed = TRUE)
