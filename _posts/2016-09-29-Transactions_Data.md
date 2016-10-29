@@ -20,7 +20,7 @@ Before we begin any coding, I'd like to point out that our model will
 involve considering patients as transactions, and diseases as items.
 There are also several metrics for evaluating associations; for more 
 on understanding association rules, [check out the `arules` package author's
-document.](http://michael.hahsler.net/research/arules_RUG_2015/demo/)
+document.](https://cran.r-project.org/web/packages/arules/vignettes/arules.pdf)
 It's a great website, and I highly recommend reading through it.
 
 Load libraries, get data
