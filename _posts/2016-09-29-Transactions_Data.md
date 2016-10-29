@@ -18,10 +18,8 @@ to examine at the associations without sequences.
 
 Before we begin any coding, I'd like to point out that our model will
 involve considering patients as transactions, and diseases as items.
-When a patient has a set of diseases, and two of those diseases also
-occur in many other patients, we'll have an association rule with high
-"support". For more on understanding association rules, [check out the
-`arules` package author's
+There are also several metrics for evaluating associations; for more 
+on understanding association rules, [check out the `arules` package author's
 document.](http://michael.hahsler.net/research/arules_RUG_2015/demo/)
 It's a great website, and I highly recommend reading through it.
 
