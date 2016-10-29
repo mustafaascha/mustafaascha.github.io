@@ -362,6 +362,7 @@ We can even use `ggplot2`:
 To come....
 -----------
 
+-   Adding interesting attributes to the graphs from this post
 -   Network analysis with `rules` objects
 -   Getting started with SEER data in R
 -   Analyzing time to second cancer using SEER
