@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting Started with Transactions and Diagnosis Data
+title: Diagnosis data associations
 date: 2016-09-29
 ---
 
@@ -13,7 +13,8 @@ date: 2016-09-29
 
 In the last post, we went through the process of simulating some random
 billing claims data, then putting it through the CSPADE algorithm to see
-if there were any interesting frequent sequences.
+if there were any interesting frequent sequences. Here, we'll review how 
+to examine at the associations without sequences.
 
 Before we begin any coding, I'd like to point out that our model will
 involve considering patients as transactions, and diseases as items.
