@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Graphing association
+title: Visualizing disease-disease associations
 date: 2016-09-29
 ---
 
