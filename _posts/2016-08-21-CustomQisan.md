@@ -48,11 +48,8 @@ There's a lot of other stuff online for doing this sort of project.
 helpful](https://www.reddit.com/r/MechanicalKeyboards/comments/4l0p41/guide_detailed_guide_to_making_a_custom_keyboard/),
 though (like matt3o's guide) it goes beyond my needs.
 
-Learning about firmware
------------------------
-
 Physically placing the switches and wires in the right places is easy
-enough, but I needed a custom solution for firmware and wiring.
+enough, but I needed a custom solution for firmware and wiring.  
 
 As far as firmware, there's a lot of information available. [This is a
 pretty good
@@ -98,7 +95,7 @@ keyboard-layout-editor.com](http://www.keyboard-layout-editor.com/),
 modifying it for my needs. I ended up with [this
 layout](http://www.mustafa.fyi/assets/qisan_keyboard_layout.json).
 
-I then dropped the json file into [Ruiqi Mao's](reddit.com/u/iandr0idos)
+I then dropped the json file into [Ruiqi Mao's](http://reddit.com/u/iandr0idos)
 [TMK Firmware Builder](http://kb.sized.io/), which showed me how to wire
 the matrix.
 
