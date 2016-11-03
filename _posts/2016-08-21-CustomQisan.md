@@ -28,20 +28,14 @@ I wasn't willing to put up with the Dell default that I had at work, so
 I opted to purchase an inconspicuous Cherry 3.0. Still, I wanted to make
 the Qisan do something for me.
 
-Inception
----------
-
-I saw [Gateron switches](https://www.massdrop.com/buy/gateron-switches)
-on Massdrop, and had an idea. I wanted to handwire my board.
 
 Guides
 ------
 
-This post inspired me to pursue a hand-wired keyboard as a project:
 [matt3o's
-BrownFox](https://deskthority.net/workshop-f7/brownfox-step-by-step-t6050.html).
-Obviously, I would be using a different approach, given mine is an
-82-key board and I already had some materials.
+BrownFox](https://deskthority.net/workshop-f7/brownfox-step-by-step-t6050.html) 
+inspired me to pursue this project, but I used a different approach because mine 
+is an 82-key board and I already had some materials.
 
 There's a lot of other stuff online for doing this sort of project.
 [This reddit guide for building a keyboard from the ground up is pretty
