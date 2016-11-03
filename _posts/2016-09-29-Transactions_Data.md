@@ -59,8 +59,8 @@ a dataframe with five patients.
         data.frame(disease = sample(diseases, 20, replace = TRUE), 
                patient = rep_len(1:5, 20), stringsAsFactors = FALSE)
 
-Format data for arules
-----------------------
+### Format data for arules
+
 
 Given some data, let's prepare it for associations analysis. We'll use
 the `split` command to produce a list of the diseases that contains a
@@ -92,8 +92,8 @@ filtering approaches](https://en.wikipedia.org/wiki/Netflix_Prize).
 
     claims_tx <- as(claims_tx, "tidLists")
 
-Checking out our data
----------------------
+### Checking out our data
+
 
 Even before running the *apriori* or *eclat* algorithms, there's a lot
 to learn about the data.
@@ -194,8 +194,7 @@ visualization:
 
 ![](http://mustafa.fyi/assets/image_claims-1.png)
 
-`arules` and friends
---------------------
+### `arules` and friends
 
 At this point, let's see what the *apriori* algorithm has to say. First,
 we'll have R calculate the relationships according to our own
@@ -263,8 +262,8 @@ To get you going, here's one of the default plotting methods:
 
 ![](http://mustafa.fyi/assets/plot_rules-1.png)
 
-Interpreting this information
------------------------------
+### Interpreting this information
+
 
 This is healthcare data, so it makes the sense to look at tests of 
 difference and odds ratios. There are other measures of rules, definitely check out the
@@ -280,7 +279,7 @@ frame showing associations and other measures:
     claims_rules_measures <- 
       cbind(as(claims_rules, "data.frame"), claims_rules_measures)
 
-There's some munging required...
+There's some munging required, mostly just splitting the 1 -> 2 rule variable into two variables. 
 
     library(statnet)
 
