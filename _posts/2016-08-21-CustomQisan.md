@@ -4,8 +4,8 @@ title: Modding a Qisan 82-key Keyboard
 date: 2016-08-21
 ---
 
-Bill of materials
------------------
+### Bill of materials
+
 
 -   [120 Gateron
     Clears](https://deskthority.net/wiki/Gateron_KS-3_series) from
@@ -15,8 +15,7 @@ Bill of materials
 -   a [Teensy 2.0](http://www.pjrc.com/teensy/index.html)  
 -   Solder, associated tools, wiring
 
-Original Board
---------------
+### Original Board
 
 This was the first mechanical keyboard that I ever purchased, a [Qisan
 82-key from
@@ -29,8 +28,7 @@ I opted to purchase an inconspicuous Cherry 3.0. Still, I wanted to make
 the Qisan do something for me.
 
 
-Guides
-------
+### Guides
 
 [matt3o's
 BrownFox](https://deskthority.net/workshop-f7/brownfox-step-by-step-t6050.html) 
@@ -56,8 +54,7 @@ matrices](http://blog.komar.be/how-to-make-a-keyboard-the-matrix/), and
 [this site does,
 too](http://pcbheaven.com/wikipages/How_Key_Matrices_Works/).
 
-Choosing a microcontroller
---------------------------
+### Choosing a microcontroller
 
 After reading through some guides, I chose the Teensy 2.0 because it is
 small and has enough pins for my needs. I picked up a Teensy++ 2.0, too,
@@ -78,8 +75,7 @@ processing analog signals (from my guitar). I can set up a couple of
 transistors to make my guitar sound fuzzy, but I've never designed
 software for a processor. This is a whole new world for me.
 
-Building the matrix and its firmware
-------------------------------------
+### Building the matrix and its firmware
 
 Fortunately, the process of programming a keyboard can be done with
 (almost) entirely GUI interfaces.
@@ -108,8 +104,7 @@ in previous links. Still, I kinda wish I was forced to write out my own
 code. On the other hand, I'm not going to rebuild the wheel unless it's
 an academic exercise.
 
-Doing it.
----------
+### Doing it.
 
 [Here's a picture of the fully-wired board, with the Teensy, Matrix, and
 all](http://www.mustafa.fyi/assets/qisan_matrix.JPG)
@@ -123,8 +118,7 @@ Unfortunately, I don't have proper keycaps, so [the board is a bit of a
 frankenstein.](http://www.mustafa.fyi/assets/qisan_frankenstein.JPG).
 This is okay, for now.
 
-Future directions
------------------
+### Future directions
 
 [This website](http://builder.swillkb.com/) generates the CAD files
 necessary to build a keyboard with whatever layout you'd like. I'm not
