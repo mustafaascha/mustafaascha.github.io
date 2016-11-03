@@ -4,8 +4,8 @@ title: Munging Healthcare Claims for Sequences Analysis
 date: 2016-09-05
 ---
 
-Purpose
--------
+### Purpose
+
 
 [There
 are](http://michael.hahsler.net/research/arules_RUG_2015/talk/arules_RUG2015.pdf)
@@ -26,8 +26,7 @@ analyzed using CSPADE and results interpreted. Also, for those of you working wi
 "big" data, I adapted the sequences-reading function to take advantage of 
 the tidyverse and parallel CPU processes. 
 
-Software
---------
+### Software
 
 There are a few packages for mining sequences associations in R. I'll be
 using
@@ -53,8 +52,8 @@ format. Here are the libraries you'll need:
     library(purrr)
     library(stringr)
 
-Data
-----
+### Data
+
 
 Alright, so first let's simulate some data. I'll be working under the
 assumption that you have a list of one diagnosis per patient, though
@@ -319,8 +318,8 @@ interested. I've found that CPT codes are harder to obtain, though feel
 free to email me and let me know if they're easily
 available: <mustafa.ascha@gmail.com>.
 
-Cleaning the data so it fits
-----------------------------
+### Cleaning the data so it fits
+
 
 There are a couple of issues with the initial format:
 
