@@ -23,8 +23,7 @@ on understanding association rules, [check out the `arules` package author's
 document.](https://cran.r-project.org/web/packages/arules/vignettes/arules.pdf)
 It's a great website, and I highly recommend reading through it.
 
-Load libraries, get data
-------------------------
+### Load libraries, get data
 
 First, of course, we'll have to load some libraries.
 
