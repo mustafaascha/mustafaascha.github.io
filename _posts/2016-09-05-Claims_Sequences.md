@@ -23,8 +23,8 @@ my position and had billing claims of similar form, this might help save some ti
 
 Future posts will simulate data with particular sequences added, which will then by 
 analyzed using CSPADE and results interpreted. Also, for those of you working with
-"big" data, I adapted the sequences-reading function to take advantage of 
-the tidyverse and parallel CPU processes. 
+"big" data, [I adapted the sequences-reading function to take advantage of 
+the tidyverse and parallel CPU processes](https://github.com/mustafaascha/arulesSequences). 
 
 ### Software
 
