@@ -256,14 +256,8 @@ raw data:
     
 There's a lot available to explore!
 
-To get you going, here's one of the default plotting methods: 
 
-    plot(claims_rules, method = "graph", control = list(type = "items"))
-
-![](http://mustafa.fyi/assets/plot_rules-1.png)
-
-### Interpreting this information
-
+### An aside: Beyond Support
 
 This is healthcare data, so it makes the sense to look at tests of 
 difference and odds ratios. There are other measures of rules, definitely check out the
@@ -303,8 +297,16 @@ There's some munging required, mostly just splitting the 1 -> 2 rule variable in
 
     claims_rules_measures <- 
       claims_rules_measures[rep_len(c(TRUE, FALSE), nrow(claims_rules_measures)),]
-      
-We can then use this data to make a network of disease-disease associations (which can be assigned attributes according to the rules measures, but that's for another time): 
+
+### Visualization
+
+To get going, here's one of the default plotting methods: 
+
+    plot(claims_rules, method = "graph", control = list(type = "items"))
+
+![](http://mustafa.fyi/assets/plot_rules-1.png)
+
+We can also use the `claims_rules_measures` data to make a network of disease-disease associations: 
 
     claims_network <- 
       network(x = cbind(claims_rules_measures$First_disease, claims_rules_measures$Second_disease), directed = TRUE)
