@@ -257,7 +257,7 @@ raw data:
 There's a lot available to explore!
 
 
-### An aside: Beyond Support
+### An aside: beyond support
 
 This is healthcare data, so it makes the sense to look at tests of 
 difference and odds ratios. There are other measures of rules, definitely check out the
