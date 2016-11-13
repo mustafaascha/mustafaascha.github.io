@@ -297,7 +297,7 @@ There's some munging required, mostly just splitting the 1 -> 2 rule variable in
       str_trim(side = "both")
 
     claims_rules_measures <- 
-      claims_rules_measures %>% filter(First_disease != " ")
+      claims_rules_measures %>% filter(First_disease != "")
 
     claims_rules_measures <- 
       claims_rules_measures[rep_len(c(TRUE, FALSE), nrow(claims_rules_measures)),]
@@ -362,6 +362,10 @@ We can even use `ggplot2`:
       theme(legend.position = "right")
 
 ![](http://mustafa.fyi/assets/check_methods-1.png)
+
+
+What I really like about these visualizations 
+
 
 To come....
 -----------
