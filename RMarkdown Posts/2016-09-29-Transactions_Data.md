@@ -1,9 +1,3 @@
----
-layout: post
-title: Getting Started with Transactions and Diagnosis Data
-date: 2016-09-29
----
-
 -   [Load libraries, get data](#load-libraries-get-data)
 -   [Format data for arules](#format-data-for-arules)
 -   [Checking out our data](#checking-out-our-data)
@@ -58,30 +52,6 @@ five patients.
           "Unspecified_cancer",
           "Vitamin_D_deficiency",
           "Trichtillomania",
-          # "Psoriasis",
-          # "Esophagitis",
-          # "Otitis_media",
-          # "Ingrown_toenail",
-          # "ADHD",
-          # "Arthritis",
-          # "Chlamydia",
-          # "Parasites_Scabies",
-          # "Meningitis",
-          # "Zika_Virus",
-          # "Hepatitis",
-          # "Giardiasis",
-          # "Takatsubo_Cardiomyopathy",
-          # "Flu",
-          # "Obesity",
-          # "Latex_allergies",
-          # "Lice",
-          # "Legionellosis",
-          # "Lymphocytic_Choriomeningitis",
-          # "Tetanus",
-          # "Ticks_Lyme_Disease",
-          # "Tuburculosis",
-          # "Trench_fever",
-          # "Creutzfeldt-Jakob_Disease",
           "Hearing_loss")
 
     claims_data <- 
@@ -221,7 +191,7 @@ visualization:
 
     image(claims_tx)
 
-![](http://mustafa.fyi/assets/image_claims-1.png)
+![](2016-09-29-Transactions_Data_files/figure-markdown_strict/image_claims-1.png)
 
 `arules` and friends
 --------------------
@@ -266,7 +236,7 @@ raw data.
 
     plot(claims_rules, method = "graph", control = list(type = "items"))
 
-![](http://mustafa.fyi/assets/plot_rules-1.png)
+![](2016-09-29-Transactions_Data_files/figure-markdown_strict/plot_rules-1.png)
 
 Interpreting this information
 -----------------------------
@@ -299,10 +269,10 @@ There's some munging required...
                extra = "drop")
 
     claims_rules_measures$First_disease <- 
-      str_replace_all(string = claims_rules_measures$First_disease, pattern = "\\{|\\}", replacement = "")
+      str_replace_all(string = claims_rules_measures$First_disease, pattern = "\\{|\\}", replacement = "") %>% str_trim(side = "both")
 
     claims_rules_measures$Second_disease <- 
-      str_replace_all(string = claims_rules_measures$Second_disease, pattern = "\\{|\\}", replacement = "")
+      str_replace_all(string = claims_rules_measures$Second_disease, pattern = "\\{|\\}", replacement = "") %>% str_trim(side = "both")
 
     claims_rules_measures <- 
       claims_rules_measures %>% filter(First_disease != " ")
@@ -317,7 +287,7 @@ Let's see what this `network` object looks like:
 
     plot(claims_network)
 
-![](http://mustafa.fyi/assets/claims_viz-1.png)
+![](2016-09-29-Transactions_Data_files/figure-markdown_strict/claims_viz-1.png)
 
 Or, we can try doing something like this with igraph:
 
@@ -327,7 +297,7 @@ Or, we can try doing something like this with igraph:
 
     plot(claims_igraph, edge.arrow.size = 0.04)
 
-![](http://mustafa.fyi/assets/gg_claims-1.png)
+![](2016-09-29-Transactions_Data_files/figure-markdown_strict/gg_claims-1.png)
 
     class(claims_igraph)
 
@@ -380,7 +350,7 @@ We can even use `ggplot2`:
       scale_color_viridis(discrete = TRUE) + 
       theme(legend.position = "right")
 
-![](http://mustafa.fyi/assets/check_methods-1.png)
+![](2016-09-29-Transactions_Data_files/figure-markdown_strict/check_methods-1.png)
 
 To come....
 -----------

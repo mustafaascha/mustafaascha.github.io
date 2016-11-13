@@ -56,30 +56,6 @@ diseases <-
 	  "Unspecified_cancer",
 	  "Vitamin_D_deficiency",
 	  "Trichtillomania",
-	  # "Psoriasis",
-	  # "Esophagitis",
-	  # "Otitis_media",
-	  # "Ingrown_toenail",
-	  # "ADHD",
-	  # "Arthritis",
-	  # "Chlamydia",
-	  # "Parasites_Scabies",
-	  # "Meningitis",
-	  # "Zika_Virus",
-	  # "Hepatitis",
-	  # "Giardiasis",
-	  # "Takatsubo_Cardiomyopathy",
-	  # "Flu",
-	  # "Obesity",
-	  # "Latex_allergies",
-	  # "Lice",
-	  # "Legionellosis",
-	  # "Lymphocytic_Choriomeningitis",
-	  # "Tetanus",
-	  # "Ticks_Lyme_Disease",
-	  # "Tuburculosis",
-	  # "Trench_fever",
-	  # "Creutzfeldt-Jakob_Disease",
 	  "Hearing_loss")
 
 claims_data <- 
@@ -240,10 +216,10 @@ claims_rules_measures <-
            extra = "drop")
 
 claims_rules_measures$First_disease <- 
-  str_replace_all(string = claims_rules_measures$First_disease, pattern = "\\{|\\}", replacement = "")
+  str_replace_all(string = claims_rules_measures$First_disease, pattern = "\\{|\\}", replacement = "") %>% str_trim(side = "both")
 
 claims_rules_measures$Second_disease <- 
-  str_replace_all(string = claims_rules_measures$Second_disease, pattern = "\\{|\\}", replacement = "")
+  str_replace_all(string = claims_rules_measures$Second_disease, pattern = "\\{|\\}", replacement = "") %>% str_trim(side = "both")
 
 claims_rules_measures <- 
   claims_rules_measures %>% filter(First_disease != " ")

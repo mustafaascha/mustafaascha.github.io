@@ -19,7 +19,7 @@ The networks/graphical model approach is well-suited to conveying many odds rati
 
 ### Objective
 
-
+We'll be using [data provided in a previous post]()
 
 
 

@@ -287,10 +287,14 @@ There's some munging required, mostly just splitting the 1 -> 2 rule variable in
                extra = "drop")
 
     claims_rules_measures$First_disease <- 
-      str_replace_all(string = claims_rules_measures$First_disease, pattern = "\\{|\\}", replacement = "")
+      str_replace_all(string = claims_rules_measures$First_disease, 
+                      pattern = "\\{|\\}", replacement = "") %>% 
+      str_trim(side = "both")
 
     claims_rules_measures$Second_disease <- 
-      str_replace_all(string = claims_rules_measures$Second_disease, pattern = "\\{|\\}", replacement = "")
+      str_replace_all(string = claims_rules_measures$Second_disease, 
+                      pattern = "\\{|\\}", replacement = "") %>% 
+      str_trim(side = "both")
 
     claims_rules_measures <- 
       claims_rules_measures %>% filter(First_disease != " ")
