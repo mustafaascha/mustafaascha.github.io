@@ -364,7 +364,7 @@ We can even use `ggplot2`:
 ![](http://mustafa.fyi/assets/check_methods-1.png)
 
 
-What I really like about these visualizations 
+Hopefully, it's pretty clear which nodes represent the diseases whose incidence was artificially increased (even without a legend). 
 
 
 To come....
