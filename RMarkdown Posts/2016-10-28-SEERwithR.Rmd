@@ -1,8 +1,8 @@
 ---
-title: "Data Conglomeration: SEER parts into a whole"
+title: "Getting SEER data in R"
 author: "Mustafa Ascha"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
+date: "October 28, 2016"
+output: md_document
 ---
 
 ```{r options, echo = FALSE}
@@ -14,20 +14,22 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ```
 
-#Data Conglomeration: SEER parts into a whole
+**Note** 
 
-**Intro:** The Surveillance, Epidemiology, and End Results (SEER) Program provides a lot of potentially useful cancer data. Unfortunately, the data formats are a bit limited at first. 
+I wrote this about a year ago, but I'm posting it here in case someone finds it helpful. 
 
-**Purpose:** To obtain SEER data and combine the 40 provided files into just a few useful files, using R. 
+### Intro/purpose
 
-###Requesting/Downloading the data
+The Surveillance, Epidemiology, and End Results (SEER) Program provides a lot of potentially useful cancer data. Unfortunately, the data formats are a bit limited at first. This document shows how to obtain SEER data and combine the 40 provided files into just a few useful files, using R. 
+
+### Requesting/Downloading the data
 To begin doing anything, you'll have to obtain data. Go to [this page](http://seer.cancer.gov/data/access.html) to request the data and sign their agreement form. 
 
 After returning the agreement form, you'll be linked to [this site](http://seer.cancer.gov/data/options.html). Pick ZIP or exe, whatever you prefer, as long as you download the *ASCII text version of the data*. You'll have to give them your username/pw to download the data, of course.
 
 Unpack the files, they should be something like 3GB total. You'll probably notice that there are dozens of files, spread across several folders. This...is inconvenient. Fortunately, there's an R package for that! 
 
-###Installing SEERaBomb  
+### Installing SEERaBomb  
 
 Thanks to the hard work of researchers at the Cleveland Clinic Foundation, there's an R package that will put those SEER files together. Moreover, you'll have the data in native R format and as a database!
 
@@ -63,7 +65,7 @@ library(SEERaBomb)
 
 ```
 
-###SEERaBomb Prep Work
+### SEERaBomb Prep Work
 
 The command `getFields` parses out the SAS files to generate a dataframe (without data yet) that contains all of the SEER fields. Use it as follows:
 
@@ -81,13 +83,12 @@ df <- pickFields(sas = df, picks = df$names)
 
 ```
 
-![All of them!](../data/allTheVars.jpg)
 
 If you want the program to run faster, probably select which variables you'd like. You can do this by substituting a subset of `df$names` in the `picks` option of the previous command.
 
 Congratulations! You've successfully prepared to put the files together.
 
-###Assemble the files!
+### Assemble the files!
 
 The following command will assemble the 40 separate files into four, of which the rest of this tutorial will focus on one. Personally, I ran this command and grabbed a cup of coffee.    
 
@@ -99,7 +100,7 @@ mkSEER(df, seerHome = "SEER_1973_2012_TEXTDATA/")
 
 Please note that none of these commands are run by this document. Its purpose, rather than executing code, is to demonstrate the code necessary to get started with SEER in R.
 
-####Citations:
+#### Citations:
 
 ```{r cite, eval = TRUE, echo = FALSE, results = "asis"}
 
