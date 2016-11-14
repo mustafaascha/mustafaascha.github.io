@@ -19,7 +19,9 @@ The networks/graphical model approach is well-suited to conveying many odds rati
 
 ### Objective
 
-We'll be using [data provided in a previous post]()
+We'll be using [data provided in a previous post](http://mustafa.fyi/blog/2016/09/29/Transactions_Data), specifically the `claims_rules_measures` dataframe. You can find the code to make the dataframe [here](http://mustafa.fyi/assets/claims_simulation.R). 
+
+Alternative: use medicare synthetic PUFs? 
 
 
 
