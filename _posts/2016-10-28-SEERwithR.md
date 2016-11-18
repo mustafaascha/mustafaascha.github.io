@@ -19,9 +19,8 @@ just a few files for easier handling.
 
 ### Requesting/Downloading the data
 
-To begin doing anything, you'll have to obtain data. Go to [this
-page](http://seer.cancer.gov/data/access.html) to request the data and
-sign their agreement form.
+[The SEER website](http://seer.cancer.gov/data/access.html) makes it very easy
+to obtain data, requesting only that you read/sign their data use agreement form.
 
 After returning the agreement form, you'll be linked to [this
 site](http://seer.cancer.gov/data/options.html). Pick ZIP or exe,
@@ -31,7 +30,7 @@ data, of course.
 
 Unpack the files, they should be something like 3GB total. You'll
 probably notice that there are dozens of files, spread across several
-folders. This...is inconvenient. Fortunately, there's an R package for
+folders. This...is inconvenient. Fortunately, there's a package for
 that!
 
 ### Installing SEERaBomb
