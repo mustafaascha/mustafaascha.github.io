@@ -15,7 +15,7 @@ The Surveillance, Epidemiology, and End Results (SEER) Program provides
 a lot of potentially useful cancer data. Unfortunately, the data 
 require either SAS or a heavy time commitment to be useful. This document 
 shows how to obtain SEER data and combine the 40 provided files into 
-just a few files.
+just a few files for easier handling.
 
 ### Requesting/Downloading the data
 
