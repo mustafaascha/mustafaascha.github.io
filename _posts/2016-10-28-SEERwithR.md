@@ -12,15 +12,15 @@ finds it helpful.
 ### Intro/purpose
 
 The Surveillance, Epidemiology, and End Results (SEER) Program provides
-a lot of potentially useful cancer data. Unfortunately, the data formats
-are a bit limited at first. This document shows how to obtain SEER data
-and combine the 40 provided files into just a few useful files, using R.
+a lot of potentially useful cancer data. Unfortunately, the data 
+require either SAS or a heavy time commitment to be useful. This document 
+shows how to obtain SEER data and combine the 40 provided files into 
+just a few files for easier handling.
 
 ### Requesting/Downloading the data
 
-To begin doing anything, you'll have to obtain data. Go to [this
-page](http://seer.cancer.gov/data/access.html) to request the data and
-sign their agreement form.
+[The SEER website](http://seer.cancer.gov/data/access.html) makes it very easy
+to obtain data, requesting only that you read/sign their data use agreement form.
 
 After returning the agreement form, you'll be linked to [this
 site](http://seer.cancer.gov/data/options.html). Pick ZIP or exe,
@@ -30,19 +30,18 @@ data, of course.
 
 Unpack the files, they should be something like 3GB total. You'll
 probably notice that there are dozens of files, spread across several
-folders. This...is inconvenient. Fortunately, there's an R package for
+folders. This...is inconvenient. Fortunately, there's a package for
 that!
 
 ### Installing SEERaBomb
 
 Thanks to the hard work of researchers at the Cleveland Clinic
-Foundation, there's an R package that will put those SEER files
-together. Moreover, you'll have the data in native R format and as a
-database!
+Foundation, there's an R package that will assemble the many SEER materials
+into just a few coherent files. Moreover, you'll have the data in native R 
+format and as a database! 
 
 If you're interested in learning more about it, check out the [SEERaBomb
-page](https://cran.r-project.org/web/packages/SEERaBomb/index.html) at
-your favorite CRAN mirror.
+documentation here](https://cran.r-project.org/web/packages/SEERaBomb/index.html).
 
 Installing the R package dependencies for SEERaBomb also requires
 installing a library outside of R, the Open GL Utility, "GLU".
@@ -56,7 +55,7 @@ for instructions.
 
 For Windows (or more detailed instructions for other operating systems), see [here](https://www.opengl.org/documentation/implementations/) for how to install GLU.
 
-You'll have to install `SEERaBomb`:
+After installing the dependencies, install and load `SEERaBomb`:  
 
     install.packages("SEERaBomb")
 
