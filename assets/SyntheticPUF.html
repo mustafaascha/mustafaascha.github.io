@@ -172,10 +172,7 @@ synpuf$icd9 &lt;- gsub(x = synpuf$icd9, pattern = &quot;[A-Z].+&quot;, replaceme
   round(digits = 3)</code></pre>
 <pre><code>##    ID  icd9 
 ## 0.000 0.307</code></pre>
-<p>Cool, not much (of the few variables) was missing.</p>
-<div id="a-networks-approach" class="section level1">
-<h1>A Networks Approach</h1>
-<p>I’ve recently become interested in probabilistic graphical models, particularly bayesian networks. <code>bnlearn</code> has floated across my radar several times, so I’ll be approaching learning this model using the <code>bnlearn</code> package. I think the data will fit, but there may very well be more munging to do.</p>
+<p>We're missing a lot of diagnosis codes, but we can still do this analysis. We'll have to keep in mind the possibility of missingness not-at-random when drawing conclusions.</p>
 <div id="dimensionality-reduction" class="section level2">
 <h2>Dimensionality reduction</h2>
 <p>The dimensionality reduction afforded by the <a href="https://www.hcup-us.ahrq.gov/toolssoftware/ccs/ccs.jsp">Clinical Classification “Software”</a> from the Agency for Healthcare Research and Quality project “Healthcare Cost and Utilization Project”. For the purposes of this document, we’ll use the <a href="https://www.hcup-us.ahrq.gov/toolssoftware/ccs/Single_Level_CCS_2015.zip">single-level CCS (note: this link goes to a zip file)</a>.</p>
@@ -265,7 +262,7 @@ synccs_wide$id &lt;- NULL</code></pre>
 </div>
 <div id="figuring-out-associations" class="section level2">
 <h2>Figuring out associations</h2>
-<p>One popular R package, <code>arules</code> calls a C implementation of an algorithm (apriori, by C. Borgelt) that we can use to produce our network adjacency matrix. Moreover, we can calculate relevant metrics such as odds ratios and chi-square tests of difference if we are interested in presenting this data to the traditional physician/clinical crowd. In fact, now that I think about it, it might be worth implementing a Bonferroni correction or Tukey’s Honest Significant Difference to help people make sense of the mass of results.</p>
+<p>One popular R package, <code>arules</code> calls a C implementation of an algorithm (apriori, by C. Borgelt) that we can use to produce our network edge list. Moreover, we can calculate relevant metrics such as odds ratios and chi-square tests of difference if we are interested in presenting this data to the traditional physician/clinical crowd. In fact, now that I think about it, it might be worth implementing a Bonferroni correction or Tukey’s Honest Significant Difference to help people make sense of the mass of results.</p>
 <p>Here, we’ll use the <code>arules</code> package to produce our adjacency matrix and calculate some useful values. Note that <code>arules</code> considers each patient (row) a transaction and each diagnosis (column) an item.</p>
 <pre class="r"><code>#rm(list = ls()[-grep(&quot;synccs_wide&quot;, ls())])
 
