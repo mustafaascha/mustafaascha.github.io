@@ -20,7 +20,7 @@ In the interest of not seeming crazy, I'll use a recently-developed field to ill
 
 Too much of a good thing can cause discomfort, and the most immediate goal for any person is to avoid discomfort. So, in the past, rather than recognize gluten intolerance or celiac disease, it was easy to label a wheat allergy as food preference. This wasn't a problem, though, because people could just eat some other grain. 
 
-Unfortunately, wheat is prevalent, and its immunological implications are inescapable because gluten is a glue for foods. When I wrote "recently-developed", I was referring mostly to immunology :) but allow me to point out: humans are remarkably well-adapted to their environment. This is probably a cognitive evolutionary leap, and I would conjecture the genes are on the sex chromosomes. There's a really big part of me that wonders if (1) celiac disease is largely found in women and (2) our recent cognitive leap is immunological in nature. Then again, I dated a woman with celiac disease, and it's possible I'm projecting. 
+Unfortunately, wheat is prevalent, and its immunological implications are inescapable because gluten is a glue for foods. When I wrote "recently-developed", I was referring mostly to immunology :) but allow me to point out: humans are remarkably well-adapted to their environment, having a wide variety of "niches". This probably reflects evolutionary advantage, one of the most variable pathways of which is immunological. 
 
 In any case, when we fail to engage in fad diets, ignoring our obsessiveness, we may actually be behaving against our nature. Of course it depends on the individual at hand, but introducing variability in complex metabolic networks strikes me as a Good Thing.  
 
