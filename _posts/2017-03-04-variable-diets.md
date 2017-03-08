@@ -16,5 +16,12 @@ Diet is a complicated and important enough question, for example, that we give i
 
 This is a complex problem, requiring the integration of several disciplines using both broad and deep tools. For an instantaneous human thinking about the issue, a guiding hand is welcome.  
 
-So, when we fail to engage in fad diets, ignoring our obsessiveness, we may actually be behaving against our nature. Of course it depends on the individual at hand, but introducing variability in complex metabolic networks strikes me as a Good Thing.  
+In the interest of not seeming crazy, I'll use a recently-developed field to illustrate the point. Grains grow really well--well enough that farmers could lobby for corn subsidies in a time when money distribution didn't yet follow a power law, and [ancient americans](https://en.wikipedia.org/wiki/Agriculture_in_Mesoamerica) relied heavily on the same crop. Obviously, I'm american. 
 
+Too much of a good thing can cause discomfort, and the most immediate goal for any person is to avoid discomfort. So, in the past, rather than recognize gluten intolerance or celiac disease, it was easy to label a wheat allergy as food preference. This wasn't a problem, though, because people could just eat some other grain. 
+
+Unfortunately, wheat is prevalent, and its immunological implications are inescapable because gluten is a glue for foods. When I wrote "recently-developed", I was referring mostly to immunology :) 
+
+In any case, when we fail to engage in fad diets, ignoring our obsessiveness, we may actually be behaving against our nature. Of course it depends on the individual at hand, but introducing variability in complex metabolic networks strikes me as a Good Thing.  
+
+On a wholly separate note, this post is meant to be a writing sample.
