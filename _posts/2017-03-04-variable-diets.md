@@ -12,11 +12,11 @@ With globalization and a rise in agricultural output, we have provided ourselves
 
 The people who first ate our agricultural staples were literally risking their lives, assuming they knew there was a notable chance that the staples would be deadly. Of course, grains are not brightly colored or attention-getting, so maybe that's not the best evolutionary example. The idea easily maps from grains to fruits.  
 
-Diet is a complicated and important enough question, for example, that we give it a lot of thought. Those of us who have intellectual faith in our peers will, then, quickly be duped when asked: Do we eat like the people who evolved into humans millions of years ago, or do we eat like the people who evolved into humans today?  
+Diet is a particularly complicated and important enough question that we give it a lot of thought. Those of us who have intellectual faith in our peers will, then, quickly be duped when asked: Do we eat like the people who evolved into humans millions of years ago, or do we eat like the people who evolved into humans today?  
 
 This is a complex problem, requiring the integration of several disciplines using both broad and deep tools. For an instantaneous human thinking about the issue, a guiding hand is welcome.  
 
-In the interest of not seeming crazy, I'll use a recently-developed field to illustrate the point. Grains grow really well--well enough that farmers could lobby for corn subsidies in a time when money distribution didn't yet follow a power law, and [ancient americans](https://en.wikipedia.org/wiki/Agriculture_in_Mesoamerica) relied heavily on the same crop. Obviously, I'm american. 
+I'll use a recently-developed field to illustrate this point. Grains grow really well--well enough that farmers could lobby for corn subsidies in a time when money distribution didn't yet exactly follow a power law, and [ancient americans](https://en.wikipedia.org/wiki/Agriculture_in_Mesoamerica) relied heavily on the same crop. Obviously, I'm american. 
 
 Too much of a good thing can cause discomfort, and the most immediate goal for any person is to avoid discomfort. So, in the past, rather than recognize gluten intolerance or celiac disease, it was easy to label a wheat allergy as food preference. This wasn't a problem, though, because people could just eat some other grain. 
 
