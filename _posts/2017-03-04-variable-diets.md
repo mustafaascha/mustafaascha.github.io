@@ -14,12 +14,12 @@ Diet is a particularly complicated and important enough question that we give it
 
 This is a complex problem, requiring the integration of several disciplines using both broad and deep tools. For an individual thinking about the issue, a guiding hand is welcome.  
 
-I'll use a recently-developed field to illustrate the idea that, perhaps, our sources of nutrition are diverse. Grains grow really well--well enough that farmers could lobby for corn subsidies in a time when money distribution didn't yet exactly follow a power law, and [ancient americans](https://en.wikipedia.org/wiki/Agriculture_in_Mesoamerica) relied heavily on the same crop. Obviously, I'm american. 
+I would argue that the exact diet we adopt is, in itself, besides the point. Rather than accepting a homogenous diet, we might conclude that regularly shifting between food groups is beneficial. Using pathology to guide this train of thought, consider that grains grow really well--well enough that farmers could successfully lobby for corn subsidies, and [ancient americans](https://en.wikipedia.org/wiki/Agriculture_in_Mesoamerica) relied heavily on the same crop. Obviously, I'm american. 
 
-Too much of a good thing can cause discomfort, and the most immediate goal for any person is to avoid discomfort. So, in the past, rather than recognize gluten intolerance or celiac disease, it was easy to label a wheat allergy as food preference. This wasn't a problem, though, because people could just eat some other grain. 
+Too much of a good thing can cause discomfort, and the most immediate goal for any person is to avoid discomfort. So, in the past, rather than recognize gluten intolerance or celiac disease, it was easy to label a wheat allergy as food preference. This wasn't a problem, though, because people could just eat some other grain or starch. 
 
-Unfortunately, wheat is prevalent, and its immunological implications are inescapable because gluten is such a common glue for foods. When I wrote "recently-developed", I was referring mostly to immunology, but allow me to point out: humans are remarkably well-adapted to their environment, having a wide variety of "niches". This probably reflects some evolutionary advantage, one of the most variable pathways of which is immunological, and, by transitivity, metabolic. 
+Unfortunately, wheat is prevalent, and its immunological implications are inescapable because gluten is such a common glue for foods. However, humans are remarkably well-adapted to their environment, having a wide variety of "niches". This probably reflects some evolutionary advantage, one of the most variable pathways of which is immunological, and, by transitivity, metabolic. 
 
-In any case, when we fail to engage in fad diets, ignoring the ease with which we adopt novelty, we may actually be behaving against our nature. Of course it depends on the individual at hand, but introducing variability in complex metabolic networks strikes me as a Good Thing.  
+Then, when we fail to engage in fad diets, ignoring the ease with which we adopt novelty, we may actually be behaving against our nature. Of course it depends on the individual at hand, but introducing variability in complex metabolic networks strikes me as a Good Thing.  
 
 On a wholly separate note, this post is largely conjecture and meant to be a writing sample.
