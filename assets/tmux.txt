@@ -1,0 +1,46 @@
+# ---------------------
+# Configuration
+# ---------------------
+
+# use UTF8 unicode
+set -g utf8
+set-window-option -g utf8 on
+set -g status-utf8 on
+
+# make tmux display things in 256 colors
+# local .bashrc needs to have: export TERM=xterm-256color
+set -g default-terminal "xterm-256color"
+
+# ---------------------
+# New Keyboard Bindings
+# ---------------------
+
+# set Ctrl-a as the default prefix key combination
+# and unbind C-b to free it up
+set -g prefix C-a
+unbind C-b
+
+# use send-prefix to pass C-a through to application
+bind C-a send-prefix
+
+# use PREFIX | to split window horizontally and PREFIX - to split vertically
+bind \ split-window -h
+bind | split-window -h
+bind - split-window -v
+bind _ split-window -v
+
+# setup tab to switch windows
+bind tab last-window
+
+# map pane switching with ALT+Arrow keys
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# ----------------------
+# Scripts
+# -----------------------
+# bind h source-file ~/.tmux/yourfile
+
+ 
