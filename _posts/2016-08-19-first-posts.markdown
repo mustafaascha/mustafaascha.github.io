@@ -8,4 +8,4 @@ This is my first post, and I've been on a long run pretty much all day setting t
 
 If you're reading this message, it means that I succeeded. This isn't too difficult a framework to use for web development (I assume), but I'm still happy because it's my first website--ever. 
 
-In any case, <a href="mailto:mustafa.ascha@gmail.com" text="drop me a line for some encouragement!">
+In any case, <a href="mailto:mustafa.ascha@gmail.com" title="Email me!"> drop me a line for some encouragement! </a>
