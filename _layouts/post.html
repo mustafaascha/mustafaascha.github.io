@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<article class="blog-post">
+  <aside class="ai-disclaimer" role="note" aria-label="Content disclaimer">
+    <strong>Content disclaimer:</strong> This post may contain AI-generated content.
+  </aside>
+
+  <header class="post-header">
+    <h2>{{ page.title }}</h2>
+    <p class="post-date">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </p>
+  </header>
+
+  {{ content }}
+</article>
