@@ -1,0 +1,28 @@
+---
+layout: default
+title: Blog | Mustafa Steven Ascha
+---
+
+<section class="blog-index">
+  <aside class="ai-disclaimer" role="note" aria-label="Content disclaimer">
+    <strong>Content disclaimer:</strong> Blog posts may contain AI-generated content.
+  </aside>
+
+  <h2>Blog posts</h2>
+
+  {% if site.posts.size > 0 %}
+    <ol class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          {% if post.excerpt %}
+            <div class="post-excerpt">{{ post.excerpt }}</div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p>No posts have been published yet. Check back soon.</p>
+  {% endif %}
+</section>
